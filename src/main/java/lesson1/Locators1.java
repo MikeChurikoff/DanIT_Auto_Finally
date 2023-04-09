@@ -19,9 +19,9 @@ public class Locators1 {
         private static final By recordsShowcase = By.xpath("//div[@class='columned" +
                 " block block-4-12'][last()]");
         private static final By hallOfFame = By.xpath("//div[@class='columned block block-4-12'][3]");
-        private static final By mailForm= By.xpath("//input[@data-val-length-max<=255]" +
+        private static final By mailForm = By.xpath("//input[@data-val-length-max<=255]" +
                 "[@data-val-length-max!=100]");
-        private static final By passForm=By.xpath("//input[@data-val-length-max=100]");
+        private static final By passForm = By.xpath("//input[@data-val-length-max=100]");
 
     }
 
