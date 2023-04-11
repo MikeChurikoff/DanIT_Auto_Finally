@@ -74,7 +74,7 @@ public class WebElements {
         searchField.sendKeys("Most handstand push ups");
         searchField.submit();*/
 
-        driver.get("https://rozetka.com.ua/");
+      /*  driver.get("https://rozetka.com.ua/");
         WebElement input = driver.findElement(By.xpath("//button[contains(text(),'Найти')]"));
         System.out.println(input.getLocation());
         System.out.println("координата x "+ input.getLocation().x);
@@ -85,6 +85,23 @@ public class WebElements {
         System.out.println("Размер данного элемента "+catalog.getSize());
         System.out.println("Высота данного элемента "+catalog.getSize().height);
         System.out.println("Ширина данного элемента "+catalog.getSize().width);
+*/
+
+        driver.get("https://www.guinnessworldrecords.com/Account/Login");
+        WebElement acceptCookiesButton = driver.findElement(By.id("ez-accept-all"));
+        acceptCookiesButton.click();
+        WebElement checkBox = driver.findElement(By.id("RememberMe"));
+        System.out.println("Ифно до нажатия:");
+        System.out.println(checkBox.isDisplayed());
+        System.out.println(checkBox.isEnabled());
+        System.out.println(checkBox.isSelected());
+
+        checkBox.click();
+
+        System.out.println("Ифно после нажатия:");
+        System.out.println(checkBox.isDisplayed());
+        System.out.println(checkBox.isEnabled());
+        System.out.println(checkBox.isSelected());
 
     }
 }
