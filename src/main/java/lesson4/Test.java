@@ -16,7 +16,5 @@ public class Test {
         System.out.println(buyTickets.getCssValue("color"));
         System.out.println(buyTickets.getCssValue("background-color"));
         driver.quit();
-
-
     }
 }
