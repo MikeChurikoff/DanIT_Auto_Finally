@@ -8,16 +8,17 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.concurrent.TimeUnit;
 
 public class Iframer {
     public static void main(String[] args) {
         System.setProperty("webdriver.chrome.driver", "C:\\sele\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
-        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
+        driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
         driver.get("https://www.w3schools.com/tags/tryit.asp?filename=tryhtml_iframe_frameborder_css");
         driver.findElement(By.xpath("//*[@id=\"accept-choices\"]")).click();
-        WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(5));
+        WebDriverWait wait = new WebDriverWait(driver,5);
         wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//iframe[@name='iframeResult']")));
         WebElement iFrame1= driver.findElement(By.xpath("//iframe[@name='iframeResult']"));
         driver.switchTo().frame(iFrame1);

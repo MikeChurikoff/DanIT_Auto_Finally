@@ -8,7 +8,7 @@ import java.time.Duration;
 import java.util.function.Function;
 
 public class Waiters {
-    private final  WebDriver driver;
+    private final WebDriver driver;
     private static final long EXPLICITY_WAIT=20L;
 
     public Waiters(WebDriver driver){
@@ -48,6 +48,10 @@ public class Waiters {
         waitForFunction(ExpectedConditions
                 .textToBePresentInElementValue(element,text),EXPLICITY_WAIT);
     }
+    public void waitFortextToBePresentInElementValue(By by, String text){
+        waitForFunction(ExpectedConditions
+                .textToBePresentInElementValue(driver.findElement(by),text),EXPLICITY_WAIT);
+    }
     public void waitForInvisibilityOf(WebElement element){
         waitForFunction(ExpectedConditions
                 .invisibilityOf(element),EXPLICITY_WAIT);
@@ -67,5 +71,14 @@ public class Waiters {
         }catch (InterruptedException e){
             e.printStackTrace();
         }
+    }
+    public WebElement waitForElementToBeClickable(WebElement element){
+        return fluentWait(EXPLICITY_WAIT).until(ExpectedConditions.elementToBeClickable(element));
+    }
+    public WebElement waitForElementToBeClickable(By by){
+        return fluentWait(EXPLICITY_WAIT).until(ExpectedConditions.elementToBeClickable(driver.findElement(by)));
+    }
+    public void waitForElementToBeSelected(By by){
+        waitForFunction(ExpectedConditions.elementToBeSelected(driver.findElement(by)),EXPLICITY_WAIT);
     }
 }

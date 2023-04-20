@@ -10,6 +10,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.concurrent.TimeUnit;
 
 public class ActionDoubleAndContextClick {
     public static void main(String[] args) throws InterruptedException {
@@ -17,11 +18,11 @@ public class ActionDoubleAndContextClick {
         System.setProperty("webdriver.chrome.driver", "C:\\sele\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
-        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
+        driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
         driver.get("https://demo.guru99.com/test/simple_context_menu.html");
         //iframe[@id="gdpr-consent-notice"]
         //iframe[@aria-label='Окно диспетчера конфиденциальности']
-        WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(10));
+        WebDriverWait wait = new WebDriverWait(driver, 10);
         WebElement iframe = wait.until(ExpectedConditions.presenceOfElementLocated
                 (By.xpath("//iframe[@aria-label='Окно диспетчера конфиденциальности']")));
         driver.switchTo().frame(iframe);

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="AllTests Suite">
+
+
+    <test name="AllTestCases">
+        <parameter name = "browser" value = "chrome_params"/>
+        <classes>
+            <class name="testng.parameters.Ex1"/>
+        </classes>
+    </test>
+
+
+    <test name="AllTestCases2">
+        <parameter name = "browser" value = "false_chrome_params"/>
+        <classes>
+            <class name="testng.parameters.Ex1"/>
+        </classes>
+    </test>
+</suite>

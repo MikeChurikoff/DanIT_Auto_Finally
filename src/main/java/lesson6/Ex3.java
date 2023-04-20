@@ -22,7 +22,7 @@ public class Ex3 {
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         Waiters waiters = new Waiters(driver);
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebDriverWait wait = new WebDriverWait(driver, 20);
         driver.get("https://www.guinnessworldrecords.com/Account/Login");
         WebElement accept = waiters.waitForVisabilityOfElementReturn(Locators.acceptCookies);
         accept.click();

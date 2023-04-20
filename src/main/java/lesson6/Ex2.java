@@ -14,7 +14,7 @@ public class Ex2 {
         System.setProperty("webdriver.chrome.driver", "C:\\sele\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+        WebDriverWait wait = new WebDriverWait(driver, 20);
         driver.get("https://uhomki.com.ua/ru/");
         WebElement input = wait.until(ExpectedConditions.
                 presenceOfElementLocated(By.xpath("//input[@placeholder='поиск товаров']")));

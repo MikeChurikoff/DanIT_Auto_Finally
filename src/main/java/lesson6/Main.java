@@ -28,7 +28,7 @@ public class Main {
         System.setProperty("webdriver.chrome.driver", "C:\\sele\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+        WebDriverWait wait = new WebDriverWait(driver, 20);
         driver.get("https://www.guinnessworldrecords.com/Account/Login");
         WebElement accept = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("ez-accept-all")));
         accept.click();

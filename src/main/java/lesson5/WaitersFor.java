@@ -14,16 +14,16 @@ public class WaitersFor {
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         //неявные ожидания
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        //driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         //неявные ожидания загрузки страницы
-        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
+        //driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
       /*  driver.get("https://dan-it.com.ua/uk/");
         Thread.sleep(2000);*/
         //обновление страницы
         /*driver.navigate().refresh();
         Thread.sleep(2000);*/
         //неявные ожидания отработки скриптов страницы
-        driver.manage().timeouts().scriptTimeout(Duration.ofSeconds(20));
+        //driver.manage().timeouts().scriptTimeout(Duration.ofSeconds(20));
 
 
 

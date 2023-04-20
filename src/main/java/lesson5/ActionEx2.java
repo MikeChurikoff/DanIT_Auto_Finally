@@ -1,6 +1,6 @@
 package lesson5;
 
-import com.beust.ah.A;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -11,6 +11,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.concurrent.TimeUnit;
 
 public class ActionEx2 {
     public static void dranNdrop(Actions actions, WebDriver driver,int x,int y ){
@@ -23,10 +24,10 @@ public class ActionEx2 {
         System.setProperty("webdriver.chrome.driver", "C:\\sele\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
-        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
+        driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
         driver.get("https://www.ibuongiorno.com/about");
         Thread.sleep(4000);
-        WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(5));
+        WebDriverWait wait = new WebDriverWait(driver,10);
         wait.until(ExpectedConditions
                 .presenceOfElementLocated(By.xpath("//a[text()='Contatti']")));
 
