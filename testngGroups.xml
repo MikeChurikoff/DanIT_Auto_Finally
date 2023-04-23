@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="AllTests Suite">
+    <test name="RegressionTest">
+        <groups>
+            <run>
+                <include name = "regression"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="testng.groups.Ex5"/>
+        </classes>
+    </test>
+
+    <test name="SmokeTest">
+        <groups>
+            <run>
+                <include name = "smoke"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="testng.groups.Ex5"/>
+        </classes>
+    </test>
+</suite>

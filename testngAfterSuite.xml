@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="AllTests Suite">
+    <test name="AllTestCases">
+        <classes>
+            <class name="testng.groups.Ex3"/>
+            <class name="testng.groups.Ex4"/>
+        </classes>
+    </test>
+</suite>

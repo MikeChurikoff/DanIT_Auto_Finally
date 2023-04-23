@@ -19,7 +19,7 @@ public class Ex1 {
 
     @Test
     public void checkWebPageTitle(){
-        System.setProperty("webdriver.chrome.driver", "C:\\sele\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "/Users/kudayeusiarhei/Desktop/chromedriver/chromedriver");
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get("https://klopotenko.com/");
