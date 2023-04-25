@@ -37,6 +37,12 @@ public class Waiters {
     public void waitForVisabilityOfElement(By by){
         waitForFunction(ExpectedConditions.visibilityOf(driver.findElement(by)),EXPLICITY_WAIT);
     }
+    public void waitForPresenceOfElement(By by){
+        waitForFunction(ExpectedConditions.presenceOfElementLocated(by),EXPLICITY_WAIT);
+    }
+    public WebElement waitForPresenceOfElementReturn(By by){
+        return fluentWait(EXPLICITY_WAIT).until(ExpectedConditions.presenceOfElementLocated(by));
+    }
     public WebElement waitForVisabilityOfElementReturn(WebElement element){
        return fluentWait(EXPLICITY_WAIT).until(ExpectedConditions.visibilityOf(element));
     }
@@ -80,5 +86,10 @@ public class Waiters {
     }
     public void waitForElementToBeSelected(By by){
         waitForFunction(ExpectedConditions.elementToBeSelected(driver.findElement(by)),EXPLICITY_WAIT);
+    }
+    public void waitForFrameAndSwitchXpath(String xpath){
+        waitForPresenceOfElementLocated(By.xpath(xpath));
+        waitForFunction(ExpectedConditions
+                .frameToBeAvailableAndSwitchToIt(By.xpath(xpath)), EXPLICITY_WAIT);
     }
 }
